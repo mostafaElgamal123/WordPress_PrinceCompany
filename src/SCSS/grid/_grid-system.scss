@@ -1,0 +1,68 @@
+%container{
+    margin-#{$direction}:auto;
+    margin-#{$directionReverse}:auto;
+    display: block;
+    position: relative;
+}
+
+.container {
+    @extend %container;
+    padding-#{$direction}:$gutterSize/2;
+    padding-#{$directionReverse}:$gutterSize/2;
+    max-width: 1200px;
+}
+
+.container-fluid {
+    @extend %container;
+    padding-#{$direction}:$gutterSize/2;
+    padding-#{$directionReverse}:$gutterSize/2;
+    width:100%;
+}
+
+.container-xl {
+    @extend %container;
+    padding-#{$direction}:$gutterSize;
+    padding-#{$directionReverse}:$gutterSize;
+    max-width: 1400px;
+}
+
+.row {
+    margin: 0 -#{$gutterMath};
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* Reverse row Dircetion */
+    &.row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
+
+    /* set gutters space for all columns */
+    [class*="col-"],[class*="box-"] {
+        padding-#{$direction}:$gutterSize/2;
+        padding-#{$directionReverse}:$gutterSize/2;
+    }
+}
+
+/*======== Masonry Grid Baisc ========*/
+[class*="masonry-"] {
+    margin: 0 -#{$gutterMath};
+    word-spacing: -5px;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+    /*======== Masonry Columns Baisc ========*/
+    > .column{
+        display: inline-block;
+        padding-#{$direction}:$gutterSize/2;
+        padding-#{$directionReverse}:$gutterSize/2;
+        word-spacing: normal;
+        width:100%;
+    }
+}
+
+@import 'grid-columns'; // Columns Sizes and Responsive
+@import 'grid-utilities'; // Grid System Assets and Featuresa

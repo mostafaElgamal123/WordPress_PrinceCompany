@@ -1,0 +1,62 @@
+/*
+    Theme Name: Phoenix Ultimate
+    Theme URI: https://github.com/EngCode/Tornado-v2
+    Author: Abdullah Ramadan
+    Author URI: https://phenixthemes.com
+    Powered by : Phenix Themes
+    Description: The Ultimate Business Solution from Phoenix Themes.
+    Version: 1.0
+    Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+    License: One Time Usage License
+    License URI: https://phenixthemes.com/license
+    Requires at least: 5.4
+    Requires PHP: 5.2.4
+    Text Domain: tornado
+*/
+
+/*======== REQUIRED CSS ========*/
+.wp-caption,.gallery-caption {
+    color:#888;
+    font-size:14px;
+    margin-bottom: 15px;
+}
+
+.wp-caption-text {
+    max-width:100%;
+    padding: 5px;
+    background:#1c1c1c;
+    color:#FFF;
+}
+
+.sticky {position: relative;}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+}
+
+.bypostauthor {
+    margin: 0;
+    padding: 0;
+}
+
+.alignleft {
+	display: inline;
+	margin-left: 1.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

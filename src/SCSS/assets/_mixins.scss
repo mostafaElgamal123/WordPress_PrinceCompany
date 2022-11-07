@@ -1,0 +1,69 @@
+/*=====> Extra Small Screen Mixin 0 ==> 420px <========*/
+@mixin xSmall($up) {
+    @if ($up) {
+        @media (min-width: $xSmall-query) {
+            @content;
+        }
+    } 
+    @else {
+        @media (max-width: $xSmall-query-down) {
+            @content;
+        }
+    };
+}
+
+/*=====> Small Screen Mixin 576px ==> 640px <========*/
+@mixin small($up) {
+    @if ($up) {
+        @media (min-width: $small-query) {
+            @content;
+        }
+    } 
+    @else {
+        @media (max-width: $small-query-down) {
+            @content;
+        }
+    };
+}
+
+/*=====> Medium Screen Mixin 768px ==> 920px <========*/
+@mixin medium($up) {
+    @if ($up) {
+        @media (min-width: $medium-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $medium-query-down) {
+            @content;
+        }
+    };
+}
+
+/*=====> Large Screen Mixin 1024px ==> 1366px <========*/
+@mixin large($up) {
+    @if ($up) {
+        @media (min-width: $large-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $large-query-down) {
+            @content;
+        }
+    };
+}
+
+/*=====> Extra Large Screen Mixin 1366px ==> 1600px <========*/
+@mixin xlarge($up) {
+    @if ($up) {
+        @media (min-width: $xlarge-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $xlarge-query-down) {
+            @content;
+        }
+    };
+}

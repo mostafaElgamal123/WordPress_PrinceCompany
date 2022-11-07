@@ -1,0 +1,34 @@
+.media-object {
+    @extend %flexbox;
+    &:not(.boxed) { -ms-flex-wrap: nowrap;flex-wrap: nowrap; }
+    margin-bottom: $gutterSize;
+    .media {
+        margin: 5px 0;
+        margin-#{$directionReverse}: 1.25rem;
+    }
+    
+    p {
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    .media-object {
+        margin-top: $gutterSize;
+    }
+
+    &.boxed {
+        padding:1.563rem;
+        background: #f7f7f7;
+        border:1px solid rgba(0,0,0,0.10);
+        .media {
+            margin: 0;
+            width:8.75rem;
+        }
+        .media-content {
+            padding-#{$direction}:1.25rem;
+            width:calc(100% - 8.75rem);
+        }
+    }
+
+    &.nested-level { margin-#{$direction}:10%; }
+}

@@ -1,0 +1,59 @@
+<?php
+/**
+ * Template Name: blog-cat
+ * this template for displaying 404 pages (not found)
+ * @package Tornado Wordpress
+ * @subpackage Developing Starter Template
+ * @since Tornado UI Starter 1.0
+*/
+?>
+
+<!-- Head Tag -->
+<?php get_header(); ?>
+<!-- Header -->
+<?php get_template_part('inc/template-parts/components/header'); ?>
+    <!-- End Header -->
+ 
+    <!-- Start Breadcrumb -->
+    <section class="breadcrumb primary tx-uppercase" data-src="<?php echo get_option('background_logo');?>"
+        data-gradient="linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.5))">
+        <div class="container">
+            <a href="<?php echo the_permalink() ?>" class="page-mane"><?php the_title() ?></a>
+        </div>
+    </section>
+    <!-- End Breadcrumb -->
+
+
+    <!-- Start About Page -->
+    <div class="page-content blog-page pt50 pb30">
+        <!-- Start Blog -->
+        <section class="blog">
+            <div class="container">
+                <div class="row">
+                    <!-- Start  COL -->
+                   <?php get_template_part('/inc/template-parts/vendor/blog','post'); ?>
+                    <!-- End  COL -->
+                </div>
+                <!-- Pagination -->
+                <?php
+             $paged=get_query_var('paged')?get_query_var('paged'):1;
+             $args=array(
+                 'paged' => $paged,
+                 'post_type'=>'post',
+             );
+             
+             $loop=new WP_Query( $args );
+                if (function_exists("pagination")) { pagination($loop); };
+                wp_reset_postdata();
+            
+            ?>
+            </div>
+        </section>
+        <!-- End Blog -->
+    </div>
+    <!-- End About Page -->
+   
+  <!-- Custom Footer --> 
+  <?php get_template_part('inc/template-parts/components/footer'); ?>
+<!-- Footer -->
+<?php get_footer(); ?> 

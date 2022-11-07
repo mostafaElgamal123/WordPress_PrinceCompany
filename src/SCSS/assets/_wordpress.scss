@@ -1,0 +1,22 @@
+/*======== Wordpress Adminbar ========*/
+body:not(.wp-admin) #wpadminbar{
+    @extend %fast-motion;
+    top:-32px!important;
+    padding-#{$direction}:32px;
+    #wp-admin-bar-wp-logo {
+        position: fixed;
+        top:0;
+        #{$direction}:0;
+        background: $dark-color;
+        .ab-submenu{display: none!important;}
+    }
+    &:hover{
+        top:0!important;
+        #wp-admin-bar-wp-logo {
+            background: transparent;
+            .ab-submenu{display: none!important;}
+        }
+    }
+}
+
+html{margin: 0!important;}

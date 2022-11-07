@@ -1,0 +1,138 @@
+/*===================================
+=                                   =
+=  - Tornado CSS v2                 =
+=  - Userinterface Framework        =
+=  - by Abdullah Ramadan            =
+=  - http://flash-point net/tornado =
+=  - Open Source Framework          =
+=                                   =
+===================================*/
+
+//========== Global Variables ==========//
+$page-dir:rtl;
+$page-dir-reverse:ltr;
+$direction:right;
+$directionReverse:left;
+//========== Colors Variables Sass Render ==========//
+$primary-color:#4690CD;
+$primary-color-hover:#3293E3;
+$secondary-color:#373737;
+$secondary-color-hover:#484848;
+$reverse-color:#FFF;
+$reverse-color-dark:#1c1c1c;
+$light-color:#cad0e0;
+$black-color:#222222;
+$typo-color:#555555;
+//=== Assets text colors ====//
+$success-color:#22b544;
+$danger-color:#de3131;
+$warning-color:#f4bb0e;
+$info-color:#17c0db;
+$gray-color:#868e96;
+$dark-color:#343a40;
+//=== Assets backgrounds ====//
+$success-bg:#c1eecc;
+$danger-bg:#fbbbbb;
+$warning-bg:#ffdd75;
+$info-bg:#a6eaf5;
+$gray-bg:#d9dde1;
+$dark-bg:#343a40;
+//==== Social Colors ====//
+$facebook-color:#505cd6;
+$twitter-color:#1da1f2;
+$google-plus-color:#ea4335;
+$youtube-color:#e43e3c;
+$tumblr-color:#35465c;
+$instagram-color:#d43f8d;
+$android-color:#a4c639;
+$snapchat-color:#e2e62c;
+$whatsapp-color:#10d058;
+$pinterest-color:#bd081c;
+$linkedin-color:#0077b5;
+$behance-color:#1769ff;
+$apple-color:#dbebfa;
+$cloudflare-color:#faae40;
+$dribbble-color:#ea4c89;
+$envato-color:#82b541;
+$flicker-color:#0063dc;
+$github-color:#f5f5f5;
+//========== Typography ==========//
+$primary-font:'DIN NEXT'; // font family for Head's and Titles
+$secondary-font:'DIN NEXT'; // font family for Paragraph and Small Text
+$font-icon:"tornado-icons"; // icons Font Family
+$base-l-size:16px; // Base Font Size For Large Screens
+$base-m-size:15px; // Base Font Size For Medium Screens
+$base-s-size:14px; // Base Font Size For Small Screens
+$base-line-height:1.4; // Base Line Height
+$normal-weight:400; // Normal Font Weight
+$medium-weight:500; // Medium Font Weight
+$strong-weight:600; // Bold/Bolder Font Weight
+//========== Grid System ==========//
+$grid-columns:12; // Numbers of Gride Columns
+$gutterSize:30px; // the Space Between Columns
+$gutterMath:$gutterSize/2; // the Space Between Columns Divided
+//====== Media Query Minimum Size =======//
+$xSmall-query:0; //  Mobile Screen Size to start from
+$small-query:576px; //  Mobile Screen Size to start from
+$medium-query:768px; // Tablet Screen Size to start from
+$large-query:1024px; // Desktop Screen Size to start from
+$xlarge-query:1360px; // Big Desktop Screen Size to start from
+//====== Media Query Maximum Size =======//
+$xSmall-query-down:420px; //  Mobile Screen Size to start from
+$small-query-down:640px; //  Mobile Screen Size to start from
+$medium-query-down:980px; // Tablet Screen Size to start from
+$large-query-down:1200px; // Desktop Screen Size to start from
+$xlarge-query-down:1600px; // Big Desktop Screen Size to start from
+/*========== Loading Fonts ==========*/
+@font-face {
+    font-family: 'DIN NEXT';
+    src: url('../fonts/DINNextLTW23-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN NEXT';
+    src: url('../fonts/DINNextLTW23-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN NEXT';
+    src: url('../fonts/DINNextLTW23-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+//========== Global Sass ==========//
+@import 'assets/selectors';
+@import 'assets/mixins';
+@import 'assets/reset';
+@import 'assets/tornado-icons-selectors';
+@import 'assets/wordpress';
+/*========== Global Sass ==========*/
+@import 'grid/grid-system';
+/*========== Elements ==========*/
+@import 'elements/typography';
+@import 'elements/responsive-menus';
+@import 'elements/headers';
+@import 'elements/breadcrumbs';
+@import 'elements/media-objects';
+@import 'elements/jumbtron';
+@import 'elements/labels';
+@import 'elements/cards';
+@import 'elements/pagination';
+/*========== Forms ==========*/
+@import 'forms/form-themes';
+/*========== Components ==========*/
+@import 'components/carousel';
+@import 'components/tables';
+@import 'components/tabs-system';
+@import 'components/accordion';
+@import 'components/modals';
+@import 'components/dropdowns';
+@import 'components/coloring';
+@import 'components/animations';
+@import 'assets/utilities';
+/*========== Blank Project Theme ==========*/
+@import 'theme';

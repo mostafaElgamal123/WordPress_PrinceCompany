@@ -1,0 +1,15 @@
+====> Heisha Frontend Upgrade
+https://gitlab.com/mahacode-dev/hiesha-frontend
+====> Changes Made
+ - Upgrade Frontend Core to Tornado v2
+ - Compatible With WP v5 and Up
+ - HTML Changed by 30%
+ - CSS Changed by 40%
+ - JS Changed by 100%
+ - Aspect Ratio Responvie Support
+====> Dev Tip
+ - Colors Controler in Head After CSS Files for Design Options Controls [ Optional ].
+============================
+ - Please Use Tornado v2 Components and Classes to Create Design Control Options [ Optional ].
+====> Note
+Please each time you use this template pull a new version from gitlap or upgrade yours.

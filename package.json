@@ -1,0 +1,73 @@
+{
+  "name": "tornado-ui",
+  "version": "2.0.8",
+  "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
+  "main": [
+    "/dist/js/tornado.min.js",
+    "/dist/css/tornado.css",
+    "/dist/css/tornado-rtl.css"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "tornado-wp": "babel --presets @babel/preset-react src/blocks --watch --out-file dist/js/blocks.min.js --minified --no-comments --source-maps",
+    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
+    "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado-js-build": "babel --presets @babel/preset-env src/javascript --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
+    "tornado-sass-build": "node-sass src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado": "npm-run-all tornado-js-build & tornado-sass-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngCode/Tornado-v2.git"
+  },
+  "keywords": [
+    "tornado",
+    "ui",
+    "framework",
+    "css",
+    "js",
+    "esNext",
+    "es5",
+    "es6",
+    "react",
+    "vue",
+    "wordpress",
+    "design",
+    "web",
+    "app",
+    "enviroment",
+    "gutenberg",
+    "designers",
+    "developers",
+    "development",
+    "creative",
+    "webpack",
+    "sass",
+    "vanila",
+    "rtl",
+    "user",
+    "interface",
+    "ux",
+    "components"
+  ],
+  "author": "Abdullah.Ramadan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EngCode/Tornado-v2/issues"
+  },
+  "homepage": "https://flash-point.net/tornado/",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-minify": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel": "^6.23.0"
+  }
+}

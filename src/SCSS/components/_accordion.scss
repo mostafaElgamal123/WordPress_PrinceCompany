@@ -1,0 +1,75 @@
+/*======= Accordions =======*/
+.accordion {
+    @extend %reset;
+    margin-bottom: 1.875rem;
+    .accordion-item {
+        font-size:0.875rem;
+        /*======== Accordion List ========*/
+        .accordion-title{
+            font-size:1rem;
+            line-height:2.2;
+            cursor: pointer;
+            /*======== Button Arrow || Plus ========*/
+            &::before {
+                font-size:0.6875rem;
+                margin-#{$directionReverse}:5px;
+                display: inline-block;
+                @extend %fast-motion;
+                vertical-align: middle;
+                @if ( $page-dir == 'ltr' ) {
+                    -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg);
+                } @else {
+                    -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                }
+            }
+        }
+        /*======== Accordion ========*/
+        &:not(.active) .accordion-content {display: none;}
+        /*==== Active Mode ====*/
+        &.active {
+            .accordion-title::before {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+        }
+    }
+
+    /*======== Torando Theme ========*/
+    &.tornado-accordion {
+        border:1px solid rgba(0,0,0,0.10);
+        border-bottom: 0 none;
+        /*======== Accordion Item ========*/
+        .accordion-item {
+            background: $reverse-color;
+            /*======== Accordion Title ========*/
+            .accordion-title{
+                margin-bottom: 0;
+                padding:0 1.25rem;
+                font-size:0.9375rem;
+                line-height:2.875rem;
+                border-bottom: 1px solid rgba(0,0,0,0.10);
+                /*======== Button Arrow || Plus ========*/
+                &::before{
+                    float:$directionReverse;
+                    line-height:2.875rem;
+                    font-size:0.875rem;
+                    -webkit-transform: rotate(0deg);
+                        transform: rotate(0deg);
+                }
+            }
+
+            .accordion-content {padding:1.25rem;}
+
+            /*======== Items Divider ========*/
+            &:not(:last-child){border-bottom: 1px solid rgba(0,0,0,0.10);}
+
+            /*==== Active Mode ====*/
+            &.active .accordion-title {
+                background: #f9f9f9;
+                &::before{line-height:2.875rem;}
+            }
+        }
+    }
+}

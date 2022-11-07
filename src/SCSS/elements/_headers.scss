@@ -1,0 +1,185 @@
+/*======== Header Mixin ========*/
+@mixin header(
+    $height : 4.75rem, //====> the Minimum Height
+    $background : null, //====> Header Bacground
+    $color : $gray-color, //====> Header Text Color
+    $font-size : 0.9375rem, //====> Header Text/Menu Font Size
+    //====> Menu Options All Required <======//
+    $menu-background-hvr : transparent, //====> Menu Links Hover Background
+    $menu-color-hvr : $primary-color, //====> Menu Links Hover Color
+    $dropdown-background : #FFF, //====> Dropdown Menu Background
+    $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+    $dropdown-color : $gray-color, //====> Dropdown Menu Links Color
+    $dropdown-color-hvr : $black-color, //====> Dropdown Menu Links Color Hover
+    //====> Icons buttons <======//
+    $icon-btn-size : null, //====> Icon Button Width/Height
+    $icon-size : null, //=====> Icon Button Font Size
+    $icon-background:null, //====> Icon Button Background 
+    $icon-color:null,  //====> Icon Button Color
+    $icon-background-hvr:null, //====> Icon Button Background 
+    $icon-color-hvr:null,  //====> Icon Button Color
+) {
+    @if($background) { background: $background; }
+    @if($color) {
+        color:$color;
+        //=== Logo ===//
+        .logo h1 { color:$color;}
+    }
+    /*==== Height ====*/
+    .container,.container-fluid,.container-xl{min-height:$height;} 
+    //=== Navigation Menu ===//
+    .navigation-menu {
+        @include navigation-custom-theme (
+            $height:$height,
+            $font-size:$font-size,
+            $color:$color,
+            $hvr-color:$menu-color-hvr,
+            $hvr-bg:$menu-background-hvr,
+            $sub-color:$dropdown-color,
+            $sub-bg:$dropdown-background,
+            $sub-hvr-bg:$dropdown-background-hvr,
+            $sub-hvr-color:$dropdown-color-hvr,
+        )
+    }
+
+    .action-btns .icon-btn {
+        @if ($icon-btn-size) {
+            width: $icon-btn-size;
+            height: $icon-btn-size;
+            line-height: $icon-btn-size;
+        }
+
+        @if($icon-size) { font-size: $icon-size; }
+        @if($icon-background) { background: $icon-background; }
+        @if($icon-color) { color: $icon-color; }
+
+        &:hover {
+            @if($icon-background-hvr) { background: $icon-background-hvr; }
+            @if($icon-color-hvr) { color: $icon-color-hvr; }
+        }  
+    }
+}
+
+/*======== Standard Header ========*/
+.tornado-header {
+    @include header (
+        $background : #FFF,
+        $icon-btn-size : 2.25rem,
+        $icon-size:1.25rem,
+        $icon-background:transparent, //====> Icon Button Background 
+        $icon-color:$gray-color,  //====> Icon Button Color
+    );
+    
+    background: #FFF;
+    @extend %fast-motion;
+    //=== Container Layout ===//
+    .container,.container-fluid,.container-xl {
+        @extend %flexbox;
+        @extend .align-between;
+        @extend .align-center-y;
+        &::after{ display: none; }
+    }
+    //=== Logo ===//
+    .logo {
+        h1 {
+            font-size: 1.5rem;
+            font-weight: $medium-weight;
+            text-transform: uppercase;
+        }
+
+        img {max-height: 3rem;}
+    }
+    
+    //=== Actions Buttons ===*/
+    .action-btns {
+        .icon-btn {
+            display: inline-block;
+            text-align: center;
+            @include large(up){ &.menu-btn:not(.collapsed) {display: none;} }
+            @extend %fast-motion;
+        }
+    }
+
+    //=== Actions Buttons ===*/
+    .dropdown {
+        .dropdown-list {
+            #{$direction}:auto;
+            #{$directionReverse}:0;
+            &::after,&::before { 
+                #{$direction}:auto;
+                #{$directionReverse}:12px;
+             }
+        }
+
+        @include medium(true){
+            &:hover .dropdown-list {
+                -webkit-animation: dropOpen 0.5s both;
+                    animation: dropOpen 0.5s both;
+                visibility: visible;
+            }
+        };
+        
+        @include small(false) {
+            position: static;
+            .dropdown-list {
+                margin-top: -1.125rem;
+                width:100%;
+                &::before{display: none;}
+                &::after{display: none;}
+            }
+        };
+    }
+
+    //=== Search Box ===*/
+    .search-box {
+        display: inline-block;
+        position: relative;
+        @include medium(true) { width:14.38rem; }
+        &.form-ui { input { margin-bottom: 0; } }
+        .search-btn {
+            position: absolute;
+            #{$directionReverse}:0;
+            top:0;
+            bottom: 0;
+            background:transparent;
+            color:$gray-color;
+            width:2.375rem;
+            border:0 none;
+            cursor: pointer;
+        }
+    }
+
+    .btn {margin-#{$direction}: $gutterMath;}
+    
+    //=== Primary Colored ===//
+    &.primary {
+        @include header(
+            $background : $primary-color, //====> Header Bacground
+            $color : $reverse-color, //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : $reverse-color, //====> Menu Links Hover Color
+            $dropdown-background : $primary-color, //====> Dropdown Menu Background
+            $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+            $dropdown-color : $reverse-color, //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : $reverse-color, //====> Dropdown Menu Links Color Hover
+            $icon-color:$reverse-color,  //====> Icon Button Color
+        );
+    }
+    
+    //=== Secondary Colored ===//
+    &.secondary {
+        @include header(
+            $background : $secondary-color, //====> Header Bacground
+            $color : $reverse-color, //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : $reverse-color, //====> Menu Links Hover Color
+            $dropdown-background : $secondary-color, //====> Dropdown Menu Background
+            $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+            $dropdown-color : $reverse-color, //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : $reverse-color, //====> Dropdown Menu Links Color Hover
+            $icon-color:$reverse-color,  //====> Icon Button Color
+        );
+    }
+}
